@@ -1,0 +1,9 @@
+@mixin Flex($self:false,$content:false){
+  display:flex;
+  @if $self{
+    align-items:$self;
+  }
+  @if $content{
+    justify-content: $content;
+  }
+}

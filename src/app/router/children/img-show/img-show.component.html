@@ -1,0 +1,21 @@
+<app-title [title]="title" back="/main/find"></app-title>
+<div [style.height.px]="contentHeight" class="scroll-c">
+<app-carousel #carousel appResize percent="0.55" *ngIf="imgList&&imgList.length">
+  <app-carousel-item *ngFor="let i of imgList">
+    <img style="width:100%;height:100%" [src]="'assets/'+i">
+  </app-carousel-item>
+  <footer class="footer">
+    <span class="img-badge">{{carousel.activeIndex+1}}/{{imgList.length}}</span>
+  </footer>
+</app-carousel>
+<div class="text-empty-card">
+  <div class="shop-list-li" style="color:black;font-weight: bold">
+    <samp>114m</samp>
+    <samp>可容纳60人</samp>
+    <samp>{{pos}}</samp>
+  </div>
+  <div class="my-2">
+    660平方，比天还长天大洋坪。
+  </div>
+</div>
+</div>

@@ -1,0 +1,23 @@
+@mixin mixSpace($toggle,$size,$pos:false){
+  @if(not($pos)){
+    #{$toggle}:$size ;
+  }
+  @else if($pos == x){
+    #{$toggle}-left:$size ;
+    #{$toggle}-right:$size ;
+  }
+  @else if($pos == y){
+    #{$toggle}-top:$size ;
+    #{$toggle}-bottom:$size ;
+  }
+  @else{
+    #{$toggle}-#{$pos}:$size;
+  }
+}
+
+@mixin Margin($size,$pos:false){
+  @include mixSpace(margin,$size,$pos);
+}
+@mixin Padding($size,$pos:false){
+  @include mixSpace(padding,$size,$pos);
+}

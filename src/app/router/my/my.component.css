@@ -1,0 +1,10 @@
+.avatar{
+  display:inline-block;
+  width:10rem;
+  height:10rem;
+  border-radius:50%;
+  border:.5rem solid white;
+
+  background-size:12rem 10rem;
+  background-position:center;
+}

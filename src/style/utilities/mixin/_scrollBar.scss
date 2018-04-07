@@ -1,0 +1,17 @@
+
+@mixin webkitScrollBar($mainColor,$lightColor){
+  ::-webkit-scrollbar{
+    display:block;
+    background-color:rgb(240,240,240);
+    width:.5rem;
+    height:.5rem;
+    border:1px solid $color-light;
+  }
+  ::-webkit-scrollbar-thumb{
+    background-color:$color-muted;
+    @include radius();
+    &:hover{
+      background:darken($color-muted,10%);
+    }
+  }
+}

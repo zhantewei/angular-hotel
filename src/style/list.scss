@@ -1,0 +1,78 @@
+
+.title-list{
+  background-color:$color-bg;
+  padding:1rem;
+  border-bottom:1px solid $lt-border-color;
+}
+.title-list-mid{
+
+}
+.title-list-badge{
+  @include Abs-center();
+  width:1px;
+  height:100%;
+  background-color:$lt-border-color;
+
+}
+.horizon-container{
+  width:5rem;
+  @extend .center;
+  position:relative;
+}
+.horizon-list{
+  width:100%;
+  height:1px;
+  background-color:$lt-border-color;
+}
+.badge-item{
+
+  display:inline-block;
+  white-space: nowrap;
+  text-align:center;
+  border:1px solid $lt-border-color;
+  border-radius:.8rem;
+  padding:3px 5px;
+  background-color:$color-bg;
+}
+.shop-list{
+  padding:.3rem;
+  border-bottom:1px solid $lt-border-color;
+  background-color:$color-bg;
+
+  .shop-list-img{
+    width:$shop-list-img-w;
+    height:$shop-list-img-h;
+    position:relative;
+    & img{
+      @include Full();
+    }
+    & .shop-pages{
+      position:absolute;
+      bottom:.3rem;
+      right:.3rem;
+      padding:1px;
+      background:rgba(black,.5);
+      border-radius:.5rem;
+      font-size:12px;
+      color:$color-bg;
+    }
+  }
+}
+.shop-list-content{
+  padding:$shop-list-content-padding;
+}
+.shop-list-li{
+  color:map-get($colors,font);
+  samp{
+    display:inline-block;
+  }
+  samp:first-of-type{
+    padding-right:6px;
+  }
+  samp:not(:first-of-type){
+    padding:0 6px;
+  }
+  samp:not(:last-of-type){
+    border-right:1px solid $lt-border-color;
+  }
+}

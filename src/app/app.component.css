@@ -1,0 +1,23 @@
+.content{
+  overflow-x:hidden;
+  position:relative;
+  display:block;
+}
+.footer{
+  font-size:1.4rem !important;
+  width:100%;
+  background-color:rgba(200,200,200,0.1);
+  border-top:1px solid rgba(160,160,160,0.1);
+}
+.material-icons{
+  font-size:2.4rem;
+}
+.mat-icon{
+  height:auto;
+  width:auto;
+}
+.footer-font{
+
+  font-size:1rem;
+}
+

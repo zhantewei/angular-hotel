@@ -1,18 +1,24 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule} from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
-import { AppComponent } from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ShareModule} from './share/share.module';
+import {HomeMainComponent} from './router/children/home/home.component';
+import {RoutingModule} from './router/router.module'
+import {MainService} from './service/main.service';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    HomeMainComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    RoutingModule,
+    ShareModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [MainService],
+  bootstrap: [HomeMainComponent]
 })
 export class AppModule { }

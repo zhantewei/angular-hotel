@@ -1,0 +1,170 @@
+html,body{
+  margin:0;
+  font-size:13px;
+ font-family: BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+body{
+  background-color:$color-lt;
+}
+*{
+  box-sizing: border-box;
+}
+$fonts:(
+  sm:13px,
+  md:16px,
+  lg:18px
+);
+
+@mixin Abs-full{
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+}
+%center{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.divide-line{
+  height:1px;
+  width:100%;
+  display:block;
+  background-color:$lt-border-color;
+}
+@each $key,$value in $colors{
+  .color-#{$key}{
+    color:$value !important;
+  }
+  .bg-#{$key}{
+    background-color:$value;
+  }
+}
+@each $key,$value in $fonts{
+  .font-#{$key}{
+    font-size:$value;
+    $iconSize:$value+2px;
+    & .mat-icon{
+      font-size:$iconSize;
+      height:$iconSize;
+      width:$iconSize;
+    }
+  }
+}
+.bold{
+  font-weight: bold;
+}
+.active{
+  outline:none;
+}
+.link-btn{
+  outline: none;
+}
+.center-column{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow:column;
+}
+.content-container{
+  display:block;
+  @include Abs-full();
+}
+.rel{
+  position:relative;
+}
+.img-bg{
+  @include Abs-full();
+  @extend %center;
+  z-index:-1;
+}
+.list-img{
+  display:block;
+}
+.fix-mid{
+  width:100%;
+  overflow-x:hidden;
+  position:absolute;
+  height:100%;
+  overflow-y:auto;
+}
+.list-img-title{
+  position:absolute;
+  bottom:3px;
+  padding:$list-img-item-padding;
+  color:$color-bg;
+  width:100%;
+  left:0;
+}
+.text-empty{
+  color:map-get($colors,font);
+  & .mat-icon{
+    margin-right:3px;
+  }
+  @extend .font-sm;
+  $padding-x:nth($text-card-padding,2);
+  @include Padding($padding-x,x);
+}
+.text-card-content{
+  @extend .text-empty;
+  background:map-get($colors,wt);
+}
+.text-card{
+  @extend .text-card-content;
+  $padding-y:nth($text-card-padding,1);
+  @include Padding($padding-y,y);
+}
+.text-empty-card{
+  @extend .text-empty;
+  @include Padding(nth($text-card-padding,1),y);
+}
+.my-page{
+  display:block;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:1;
+  overflow-x:hidden;
+  background-color:$color-lt;
+  @include Full();
+}
+
+.footer-card{
+  background-color:$color-bg;
+  border-top:1px solid $lighten-border-color;
+  height:$footer-card-h;
+  @include Padding(1rem,x)
+}
+.rotate180{
+  transform:rotate(180deg);
+}
+.an_arrow{
+  @include An_node();
+  transform-origin:50% 40%;
+}
+.icon-btn.active{
+  background-color:$lt-border-color;
+}
+.header-title{
+  height:50px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:$header-title-padding;
+}
+.img-badge{
+  color:white;
+  font-size:12px;
+  background:rgba(black,.6);
+  display:inline-block;
+  border-radius:.5rem;
+  padding:3px;
+}
+.text-center{
+  text-align:center;
+}
+.scroll-c{
+  overflow-y:auto;
+  overflow-x:hidden;
+}

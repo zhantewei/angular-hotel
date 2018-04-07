@@ -1,0 +1,92 @@
+<app-title title="预定演示酒店"></app-title>
+<div class="scroll-c" [style.height.px]="contentHeight">
+<app-carousel appResize percent="0.55" #carousel>
+  <app-carousel-item *ngFor="let i of imgList">
+    <img style="width:100%;height:100%" [src]="'assets/'+i">
+  </app-carousel-item>
+  <div class="list-img-title between">
+    <span class="font-md bold">预定演示酒店</span>
+    <span class="font-sm center">
+      <mat-icon>camera_alt</mat-icon>
+      <span class="ml-1">{{imgList.length}}张</span>
+    </span>
+  </div>
+</app-carousel>
+
+<div class="between text-card">
+  <span class="center">
+    <mat-icon>location_on</mat-icon>
+    上海市杨浦区控江路1142号
+  </span>
+  <span class="color-p">
+    地图导航
+  </span>
+</div>
+
+
+<div class="text-card between mt-1">
+  <span class="center">
+    <mat-icon>phone</mat-icon>
+    13738015468
+  </span>
+  <span class="color-p">联系我们</span>
+</div>
+
+<div class="text-card-content">
+  {{introduction}}
+</div>
+
+<div class="text-card between">
+  <span class="flex color-muted">
+    <span class="center mr-1" *ngFor="let i of selectedBadge">
+      <span class="color-s"><mat-icon>check_circle</mat-icon></span>
+      {{i}}
+    </span>
+  </span>
+  <span class="color-p">设施服务</span>
+</div>
+
+<div class="title-list mt-1 flex parent">
+  <div class="flex-1 center-column">
+    <samp class="color-muted">入住</samp>
+    <b class="font-lg color-p">
+      <span class="mr-1">{{_main.todayStr}}</span>
+      今天
+    </b>
+  </div>
+
+  <div class="flex-1 center-column">
+    <samp class="color-muted">离店</samp>
+    <b class="font-lg color-p">
+      <span class="mr-1">{{_main.tomorrowStr}}</span>
+      明天
+    </b>
+  </div>
+  <div class="title-list-badge">
+    <div class="badge-item abs-center">1晚</div>
+  </div>
+</div>
+
+<div class='shop-list flex' *ngFor="let bed of shopList">
+  <div class="shop-list-img">
+    <img [src]="'assets/bed/'+bed.img">
+    <div class="shop-pages">{{bed.pages}}张</div>
+  </div>
+  <div class="flex-1 shop-list-content">
+    <header class="bold font-md">{{bed.title}}</header>
+    <div class="shop-list-li my-1">
+      <samp>{{bed.people}}</samp>
+      <samp>{{bed.area}}m<sup>2</sup></samp>
+      <samp>{{bed.bed}}</samp>
+      <samp>{{bed.level}}</samp>
+    </div>
+    <div class="between mt-">
+      <b class="color-w">
+        ¥
+        <span class="font-xl">{{bed.price}}</span>
+      </b>
+      <button (click)="navTo(bed)" mat-raised-button color="warn">预定</button>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,34 @@
+$utl:(
+  size:12,
+  v-line:14px
+);
+@function getUti($key){
+  @return map-get($utl,$key);
+}
+$percent-len:(
+  25:25%,
+  50:50%,
+  75:75%,
+  100:100%
+);
+$font-size:(
+  sm:13px,
+  md:16px,
+  lg:18px,
+  xl:22px
+);
+$abs-pos:(
+  t:top,
+  l:left,
+  r:right,
+  b:bottom
+);
+$flex-count:6;
+$glob-pos:(
+  t:top,
+  b:bottom,
+  l:left,
+  r:right,
+  x:x,
+  y:y
+);

@@ -1,0 +1,10 @@
+.carousel-item{
+  @include Abs-full();
+  display:block;
+
+}
+.carousel-container{
+  position:relative;
+  overflow:hidden;
+  display:block;
+}

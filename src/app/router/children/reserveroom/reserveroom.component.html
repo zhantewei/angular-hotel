@@ -1,0 +1,79 @@
+<app-title [back]="true" title="预定演示酒店"></app-title>
+<div [style.height.px]="contentHeight" class="scroll-c">
+<div class="text-empty-card">
+  <div class="bold font-xl ">{{_main.bedMessage.bed}}</div>
+  <div class="shop-list-li my-1 color-muted">
+    <samp>{{_main.bedMessage.people}}</samp>
+    <samp>{{_main.bedMessage.area}}m<sup>2</sup></samp>
+    <samp>{{_main.bedMessage.bed}}</samp>
+  </div>
+  <div class="flex my-2">
+    <span>{{_main.todayStr}}</span>
+    <span class="mx-1">今天</span>
+    <span class="mx-1 color-muted">入住</span>
+    <div class="horizon-container">
+      <div class="horizon-list"></div>
+      <span class="badge-item abs-center">1晚</span>
+    </div>
+    <span>{{_main.tomorrowStr}}</span>
+    <span class="mx-1">明天</span>
+    <span class="mx-1 color-muted">离店</span>
+  </div>
+</div>
+<div (click)="isSelectRoomNum=!isSelectRoomNum" class="pb-3 pt-4 text-card-content font-md">
+    <div class="flex mb-1">
+      <label class="text-label">房间数</label>
+      <div  class="between" style="width:100%">
+        <span>{{roomNum}}间</span>
+        <span [class.rotate180]="isSelectRoomNum" class="d-inline an_arrow"><mat-icon>keyboard_arrow_down</mat-icon></span>
+      </div>
+    </div>
+    <div *ngIf="!isSelectRoomNum" class="divide-line"></div>
+</div>
+<div class="over-hid " [@SlideDown]="isSelectRoomNum?'open':'close'">
+  <div class="text-empty-card">
+    <div class="between px-3">
+      <button [class.active]="index+1===roomNum" (click)="selectRoom(index+1)"  class="icon-btn"  mat-icon-button *ngFor="let i of rooms;index as index">{{index+1}}</button>
+    </div>
+    <div class="between px-3 pt-1">
+      <button [class.active]="index+6===roomNum" (click)="selectRoom(index+6)" class="icon-btn"  mat-icon-button *ngFor="let i of rooms;index as index">{{index+6}}</button>
+    </div>
+  </div>
+</div>
+
+<div class="text-card-content">
+    <mat-form-field class="">
+      <label matPrefix>预定人</label>
+      <input matInput placeholder="姓名，只需填写1人" >
+    </mat-form-field>
+</div>
+<div class="text-card-content">
+    <mat-form-field class="example-full-width">
+      <label matPrefix>大陆手机</label>
+      <input type="number" matInput placeholder="用于接受通知" >
+    </mat-form-field>
+
+</div>
+<div class="text-empty-card">
+  <div class="bold">酒店政策</div>
+  <div class="color-muted">
+    <div class="my-1">
+      入住和离店：入住时间14:00以后，离店时间12:00以前
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<footer class="footer-card between --center">
+  <span>
+    <samp class="color-muted">总额：</samp>
+    <span class="color-w mx-1">
+      <span>¥</span>
+      <span class="font-xl">{{_main.bedMessage.price}}</span>
+    </span>
+    <span>{{roomNum}}间，{{liveNum}}晚</span>
+  </span>
+  <button color="warn" mat-raised-button>去支付</button>
+</footer>

@@ -1,0 +1,10 @@
+<div >
+<app-title title="发现"></app-title>
+<mat-tab-group [style.height.px]="height" class="scroll-c">
+  <mat-tab *ngFor="let tab of list" [label]='tab.label'>
+    <div (click)="navTo(img)" *ngFor="let img of tab.content" >
+      <list-img [img]="img.img" [left]="img.left" [right]="img.right"></list-img>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+<div>

@@ -1,0 +1,29 @@
+$color-light:#ddd;
+$colors:(
+  font:rgba(0,0,0,0.7),
+  p:#039be5,
+  w:red,
+  s:#5fba7d,
+  lt:lighten($color-light,10%),
+  muted:gray,
+  wt:white,
+  lt2:lighten($color-light,8%)
+);
+$header-title-padding:0 1rem;
+
+$base-size:5px;
+$color-lt:map-get($colors,lt);
+$color-bg:white;
+
+$list-img-item-padding:.5rem 1rem;
+$text-card-padding:1.4rem 1rem;
+$lighten-border-color:rgba(160,160,160,0.1);
+$lighten-bg-color:rgba(200,200,200,0.1);
+$lt-border-color:rgba(gainsboro,.5);
+
+$shop-list-img-percent:0.9;
+$shop-list-img-w:125px;
+$shop-list-img-h:$shop-list-img-w*$shop-list-img-percent;
+$shop-list-content-padding:.5rem 1rem;
+
+$footer-card-h:70px;
